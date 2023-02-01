@@ -3,11 +3,12 @@
 
 <head>
 	<meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="logo.jpg">
 	<title>wadi.el.nile</title>
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylec.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
  <script
-  src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -15,7 +16,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
 <body>
 	<a class="navbar-brand" href="index.html"><img src="https://www.el-laithy.com/wp-content/uploads/2018/04/wadi.jpg" width="120" height="100" alt=""></a>
@@ -33,12 +35,12 @@
           <li class="nav-item">
             <a class="nav-link" href="products.html">Products</a>
             <ul>
-              <li><a href="#">Insedictes</a></li>
-              <li><a href="#">Fungicides</a></li>
-              <li><a href="#">Herbicides</a></li>
-              <li><a href="#">Nematcides</a></li>
-              <li><a href="#">Aracidies</a></li>
-              <li><a href="#">Fertilizers</a></li>
+              <li><a href="insedictes.html">Insecticides</a></li>
+              <li><a href="Fungicides.html">Fungicides</a></li>
+              <li><a href="Herbicides.html">Herbicides</a></li>
+              <li><a href="Nematcides.html">Nematcides</a></li>
+              <li><a href="Aracidies.html">Aracidies</a></li>
+              <li><a href="Fertilizers.html">Fertilizers</a></li>
             </ul>
             <hr color="green" size="large">
           </li>
@@ -60,19 +62,126 @@
          
     </div>
   </nav>
+<br><br>
+<br>
+<br>
+<div class="containerc">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+    <p>Feel free to reach out to us with any questions or feedback</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="logo.jpg" style="width:100%">
+    </div>
+    <div class="column">
+      <form action="mailto:hamzafarag6911@gmail.com" method="post">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="First Name" style="font-size: 40px;">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Last Name"  style="font-size: 40px;">
+        <label for="subject">Message</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+    
+    </div>
+  </div>
+</div>
+<section id="contact">
+  <br><br>
+  <div id="container">
+    <div id="contactINFO">
+      <div class="box">
+        <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+        </div>
+        <div class="text">
+          <a href="https://www.google.com/maps/dir//wadi+el+nil+co.+for+agricultural+development+address/@30.0173996,31.2053852,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x145846cab0da592b:0xce597dbdcd570edd!2m2!1d31.1949668!2d30.0435202"><h3>Address</h3></a>
+          <p>37 el taaef st. <br> Mohandeseen <br> Giza</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i>
+        </div>
+        <div class="text">
+          <h3>phone</h3>
+          <p>01005398903 <br> 01003420500 <br> 0237609092 <br> 0237605251</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+        </div>
+        <div class="text">
+          <h3>email</h3>
+          <p>wadielnil@wadielnil.net <br> wadielnilco_2004@yahoo.com </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <div class="hh" style="background-image: url('download.jpg');">
+    <div class="ff">
+      <div class="find">
+      <h2 style="color: aliceblue;">find a solution</h2>
+      </div>
+      <div>
+        <ul class="ull">
+          <li class="lii">crop</li>
+          <li class="lii">product name</li>
+          <li class="lii">active ingreident</li>
+          <li class="lii">dieases</li>
+        </ul>
+      </div>
+      <div id="forms">
+        <form id="search_form" action="" method="get">
+          <div class="tb">
+            <div class="td"><input type="text" id="search_input" name="product" placeholder="Soultion" required></div>
+            <div class="td" id="s-cover">
+              <input type="submit" value="">
+              <button>
+                <div id="s-circle"></div>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      </div>
+      <script>
+        document.getElementById("search_form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var product_name = document.getElementById("search_input").value;
+            var products = ["Product A", "Product B", "Product C", "Product D", "Product E"];
+            if(products.includes(product_name)) {
+                window.location.href = product_name.toLowerCase() + ".html";
+            } else {
+                alert("Product not found");
+            }
+        });
+    </script>
+    <?php
+        include 'product_info.php';
+    ?>
+    </div>
+  <br>
+  <div class="news">
+  <h1 class="title">News and Events</h1>
   
-  <div id="cards" style="background-color: rgb(215, 248, 209);">
-    <img src="yes.jpg" height="400" width="100%" alt="">
-    <br>
-    <br>
-
+  <div class="card5">
+    <img src="https://www.elaard.com/img/19/09/11/65269-1568222289717029.jpg" alt="Denim Jeans" style="width:100%">
+    <h3 style="color: green;">"وادي النيل": الكيمياء الخضراء مستقبل مصر للإنتاج أغذية خالية من مسببات الأمراض</h3>
+    <p>قال محمد حمدي نائب، رئيس شركة "وادي النيل" التنمية الزراعية، إن الكيمياء الخضراء تسجد مستقبل مصر في مجال إنتاج غذائي نباتي وحيواني وداجني، خال تماما من المسببات المرضية.</p>
+    <a href="https://www.elaard.com/65269"><button>learn more...</button></a>
+  </div> 
+  </div>
+  <div class="h">
     <div class="footer-content">
       <h3>Wadi El Nil Co.</h3>
       <p>Wadi El Nil Co. was established in 1985. Wadi El Nil for Agricultural Development is a permanent partner in the Egyptian market. It deals with agrochemicals,including, biostimulants , bio-pesticides , natural pesticides , public health products, liquid fertilizers, plant stimulants and enhancers, seeds, and sprayers. We keep up with the newest developments in those fields.</p>
       <ul class="socials">
         <li><a href="https://ar-ar.facebook.com/Wadielnilco/"><i class="fa fa-facebook"></i></a></li>
      </ul>
-     <p>copyright &copy;2022 <a href="#">hamza-farag</a>  </p>
+     <p>copyright &copy;2023 <a href="#">hamza-farag</a>  </p>
      <div class="footer-menu">
       <ul class="f-menu">
          <li><a href="products.html">products</a></li>
@@ -81,6 +190,15 @@
       </ul>
      </div>
     </div>
+    </div>
+    
+  </body>
+   
+  
+  </html>
+  
+  
+  
     
     </body>
      
