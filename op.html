@@ -1,51 +1,321 @@
-.containerc input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #search-form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        margin: 50px auto;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      #search-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+      }
+      
+      button[type="submit"] {
+        width: 100px;
+        padding: 10px;
+        margin-left: 10px;
+        background-color: cornflowerblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      .results {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        margin: 50px auto;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        visibility: hidden;
+      }
+      
+      #results-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      #collapse-btn {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: cornflowerblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 500px;
+        margin: 50px auto;
+      }
+      
+      input[type="text"] {
+        height: 40px;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      input[type="submit"] {
+        height: 40px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 10px;
+      }
+      
+      .results-container {
+        position: relative;
+        width: 500px;
+        margin: 50px auto;
+        visibility: hidden;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        overflow: hidden;
+      }
+      
+      .results-list {
+        list-style-type: none;
+        padding: 20px;
+        background-color: white;
+      }
+      
+      .collapse-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 500px;
+        margin: 50px auto;
+      }
+      
+      input[type="text"] {
+        height: 40px;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      input[type="submit"] {
+        height: 40px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 10px;
+      }
+      
+      .results-container {
+        position: relative;
+        width: 500px;
+        margin: 50px auto;
+        visibility: hidden;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        overflow: hidden;
+      }
+      
+      .results-list {
+        list-style-type: none;
+        padding: 20px;
+        background-color: white;
+        
+      }
+      
+      .results-list li {
+        padding: 10px;
+        font-size: 16px;
+      }
+      
+      .collapse-btn {
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+      }
+      
+      .collapse-btn::before {
+        content: "\25B2";
+        font-size: 20px;
+      }
+      
+      #search-box {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        width: 50%;
+        border-radius: 20%;
+      }
+    
+      #title {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .ull {
+        list-style-type: none;
+        margin: 0;
+        padding: 20px;
+        overflow: auto;
+        background-color: rgb(104, 104, 104);
+        width: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        margin: 50px auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
 
-.containerc input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  cursor: pointer;
-}
+      }
+      
+      
+      .ull li {
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        float: left;
+        border-radius: 30%;
+        margin-bottom: 5px;
+      
+      }
+      
+      /* Change the link color to #111 (black) on hover */
+      .ull li:hover {
+        background-color: rgb(33, 223, 12);
+      }
+    </style>
+    
+    
+    
+    
+  </head>
+  <body>
+    <div id="search-form-container" style="background-color: gray; padding: 10px;">
+      <div id="search-box">
+        <div id="title">Find a Solution</div>
+        <ul class="ull">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ul>
+        <form id="search-form">
+          <input type="text" id="search-input" placeholder="Search for a product, crop or disease">
+          <button type="submit" style="background-color: green; color: white;">Submit</button>
+        </form>
+        <div id="results" class="results" style="overflow: auto; background-color: rgb(165, 165, 165); padding: 10px;">
+          <button id="collapse-btn" style="background-color: black; color: rgb(255, 255, 255);">Collapse</button>
+          <ul id="results-list" style="list-style-type: none; padding-left: 0;">
+            <li>Crop Name - Product Name - Disease Name</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
 
-.containerc input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-/* Style the container/contact section */
-.containerc {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 10px;
-  height: 1200x;
-}
-
-/* Create two columns that float next to eachother */
-.containerc .column {
-  float: left;
-  width: 50%;
-  margin-top: 6px;
-  padding: 20px;
-}
-
-/* Clear floats after the columns */
-.containerc .row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
+    <script>
+      const products = [
+      { id: 1, name: 'Product 1', crop: 'Crop 1', disease: 'Disease 1' },
+      { id: 2, name: 'Product 2', crop: 'Crop 2', disease: 'Disease 2' },
+      { id: 3, name: 'Product 3', crop: 'Crop 1', disease: 'Disease 3' },
+      { id: 4, name: 'Product 4', crop: 'Crop 2', disease: 'Disease 4' },
+      // ...
+    ];
+    
+    const searchForm = document.querySelector("#search-form");
+    const searchInput = document.querySelector("#search-input");
+    const resultsContainer = document.querySelector("#results");
+    const resultsList = document.querySelector("#results-list");
+    const collapseBtn = document.querySelector("#collapse-btn");
+    
+    searchForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+    
+      while (resultsList.firstChild) {
+        resultsList.removeChild(resultsList.firstChild);
+      }
+    
+      const searchTerm = searchInput.value.toLowerCase();
+      let foundProducts = 0;
+      for (const product of products) {
+        if (
+          product.name.toLowerCase().includes(searchTerm) ||
+          product.crop.toLowerCase().includes(searchTerm) ||
+          product.disease.toLowerCase().includes(searchTerm)
+        ) {
+          const listItem = document.createElement("li");
+          listItem.textContent = `${product.name} - ${product.crop} - ${product.disease}`;
+          resultsList.appendChild(listItem);
+          foundProducts++;
+        }
+      }
+    
+      if (foundProducts === 0) {
+        const listItem = document.createElement("li");
+        listItem.textContent = "No results found.";
+        resultsList.appendChild(listItem);
+      }
+    
+      resultsContainer.style.visibility = "visible";
+    });
+    
+    collapseBtn.addEventListener("click", () => {
+      resultsContainer.style.visibility = "hidden";
+    });
+        
+    </script>
+  </body>
+</html>
