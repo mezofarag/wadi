@@ -86,6 +86,10 @@ padding: 0px 10px;
         margin: auto;
         padding-top: 50px;
     }
+    .content-section .content .button {
+            width: max-content;
+    }
+
     
 }
 
